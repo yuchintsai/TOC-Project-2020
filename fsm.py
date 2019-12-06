@@ -14,6 +14,15 @@ class TocMachine(GraphMachine):
     def is_going_to_state2(self, event):
         text = event.message.text
         return text.lower() == "go to state2"
+    
+    def on_enter_welcome(self, event):
+        print("I'm entering welcome")
+
+        reply_token = event.reply_token
+        send_text_message(reply_token, "歡迎使用")
+
+    def on_exit_welcome(self):
+        print("Leaving welcome")
 
     def on_enter_state1(self, event):
         print("I'm entering state1")
