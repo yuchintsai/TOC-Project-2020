@@ -19,7 +19,7 @@ class TocMachine(GraphMachine):
         print("I'm entering welcome")
 
         reply_token = event.reply_token
-        print(event.source.userId)
+        print(event.source)
         send_text_message(reply_token, "歡迎使用")
         send_text_message(reply_token, "歡迎使用2")
 
