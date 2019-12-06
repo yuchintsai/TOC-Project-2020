@@ -14,7 +14,7 @@ load_dotenv()
 
 
 machine = TocMachine(
-    states=["start", "welcome", "state1", "state2"],
+    states=["start", "welcome", "type", "region","love","animate","scifi","drama","am","eu","tai","as"],
     transitions=[
         {
             "trigger": "advance",
@@ -24,16 +24,64 @@ machine = TocMachine(
         {
             "trigger": "advance",
             "source": "welcome",
-            "dest": "state1",
-            "conditions": "is_going_to_state1",
+            "dest": "type",
+            "conditions": "is_going_to_type",
         },
         {
             "trigger": "advance",
             "source": "welcome",
-            "dest": "state2",
-            "conditions": "is_going_to_state2",
+            "dest": "region",
+            "conditions": "is_going_to_region",
         },
-        {"trigger": "go_back", "source": ["state1", "state2"], "dest": "welcome"},
+        {
+            "trigger": "advance",
+            "source": "type",
+            "dest": "love",
+            "conditions": "is_going_to_love",
+        },
+        {
+            "trigger": "advance",
+            "source": "type",
+            "dest": "animate",
+            "conditions": "is_going_to_animate",
+        },
+        {
+            "trigger": "advance",
+            "source": "type",
+            "dest": "scifi",
+            "conditions": "is_going_to_scifi",
+        },
+        {
+            "trigger": "advance",
+            "source": "type",
+            "dest": "drama",
+            "conditions": "is_going_to_drama",
+        },
+        {
+            "trigger": "advance",
+            "source": "region",
+            "dest": "am",
+            "conditions": "is_going_to_am",
+        },
+        {
+            "trigger": "advance",
+            "source": "region",
+            "dest": "eu",
+            "conditions": "is_going_to_eu",
+        },
+        {
+            "trigger": "advance",
+            "source": "region",
+            "dest": "tai",
+            "conditions": "is_going_to_tai",
+        },
+        {
+            "trigger": "advance",
+            "source": "region",
+            "dest": "as",
+            "conditions": "is_going_to_as",
+        },
+        {"trigger": "go_back", "source": ["love","animate","scifi","drama","am","eu","tai","as"], "dest": "welcome"},
     ],
     initial="start",
     auto_transitions=False,
