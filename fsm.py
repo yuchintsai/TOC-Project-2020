@@ -20,17 +20,18 @@ class TocMachine(GraphMachine):
 
         reply_token = event.reply_token
         send_text_message(reply_token, "歡迎使用")
+        send_text_message(reply_token, "歡迎使用2")
 
     def on_enter_state1(self, event):
         print("I'm entering state1")
 
         reply_token = event.reply_token
         send_text_message(reply_token, "你好Trigger state1")
-        self.go_back(event)
+        self.go_back()
 
     def on_enter_state2(self, event):
         print("I'm entering state2")
 
         reply_token = event.reply_token
         send_text_message(reply_token, "Trigger state2")
-        self.go_back(event)
+        self.go_back()
