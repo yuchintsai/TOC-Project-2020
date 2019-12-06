@@ -21,8 +21,8 @@ class TocMachine(GraphMachine):
         reply_token = event.reply_token
         send_text_message(reply_token, "歡迎使用")
 
-    def on_exit_welcome(self):
-        print("Leaving welcome")
+    # def on_exit_welcome(self):
+    #     print("Leaving welcome")
 
     def on_enter_state1(self, event):
         print("I'm entering state1")
