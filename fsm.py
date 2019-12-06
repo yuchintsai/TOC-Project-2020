@@ -26,11 +26,11 @@ class TocMachine(GraphMachine):
 
         reply_token = event.reply_token
         send_text_message(event, "你好Trigger state1")
-        self.go_back()
+        self.go_back(event)
 
     def on_enter_state2(self, event):
         print("I'm entering state2")
 
         reply_token = event.reply_token
         send_text_message(event, "Trigger state2")
-        self.go_back()
+        self.go_back(event)
