@@ -21,7 +21,6 @@ class TocMachine(GraphMachine):
         reply_token = event.reply_token
         print(event.source)
         send_text_message(reply_token, "歡迎使用")
-        send_text_message(reply_token, "歡迎使用2")
 
     def on_enter_state1(self, event):
         print("I'm entering state1")
