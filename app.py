@@ -80,7 +80,7 @@ def webhook_handler():
         print(f"\nFSM STATE: {machine.state}")
         print(f"REQUEST BODY: \n{body}")
         if machine.state == "start":
-            response = machine.advance()
+            response = machine.advance(event)
         else:
             response = machine.advance(event)
         if response == False:
