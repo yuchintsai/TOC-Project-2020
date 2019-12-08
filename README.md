@@ -55,16 +55,11 @@ Or You can use [servo](http://serveo.net/) to expose local servers to the intern
 ![fsm](./img/show-fsm.png)
 
 ## Usage
-The initial state is set to `user`.
+The initial state is set to `welcome`.
 
-Every time `user` state is triggered to `advance` to another state, it will `go_back` to `user` state after the bot replies corresponding message.
+Every time `welcome` state is triggered to `advance` to another state, it will `go_back` to `welcome` state after the bot replies corresponding message on the `love`,`animate`,`scifi`,`drama`,`am`,`eu`,`tai`,or `as`states.
 
-* user
-	* Input: "go to state1"
-		* Reply: "I'm entering state1"
 
-	* Input: "go to state2"
-		* Reply: "I'm entering state2"
 
 ## Deploy
 Setting to deploy webhooks on tew.tw.
